@@ -3,7 +3,7 @@ import {UseFetchApi} from "./hooks/UseFetchApi"
 import { getRandomNumber } from "./utils"
 import Hero from "./components/Hero"
 import Search from "./components/Search"
-import Locationinfo from "./components/Locationinfo"
+import Locationinfo from "./components/LocationInfo"
 import ResidentsList from "./components/ResidentsList"
 
 const baseUrl = "https://rickandmortyapi.com/api/location"
