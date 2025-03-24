@@ -13,13 +13,21 @@ function ResidentCard({url}) {
 
   const episodes = resident?.episode?.length || 1
 
+  const statusIcons = {
+    alive: "🟢",
+    dead: "💀",
+    unknown: "❓"
+  };
+
   return ( 
     <>
     {resident && (
       <div className="resident_card">
         <div className="resident_header">
           <img className="resident_img" src={resident.image} alt={resident.name} />
-          <span className="resident_status">{resident.status}</span>
+          <span className={`resident_status ${resident.status.toLowerCase()}`}>
+            {statusIcons[resident.status.toLowerCase()]} {resident.status.charAt(0).toUpperCase() + resident.status.slice(1).toLowerCase()}
+          </span>
         </div>
         <div className="resident_body">
           <h2 className="resident_name">{resident.name}</h2>

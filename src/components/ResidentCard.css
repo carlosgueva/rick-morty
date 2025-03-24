@@ -1,7 +1,26 @@
 .resident_card {
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+    transition: border 0.3s ease-in-out;
+}
+
+.resident_card:hover {
+    transform: translateY(-5px);
+    border: 2px solid #70a925;
+    box-shadow: 0 0 15px rgba(112, 169, 37, 0.8), 0 0 25px rgba(112, 169, 37, 0.5);
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(112, 169, 37, 0.5);
+    }
+    100% {
+        box-shadow: 0 0 20px rgba(112, 169, 37, 0.9);
+    }
 }
 
 .resident_header {
@@ -14,6 +33,11 @@
     width: 100%;
     height: 400px;
     object-fit: cover;
+    transition: filter 0.3s ease-in-out;
+}
+
+.resident_card:hover .resident_img {
+    filter: brightness(1.1);
 }
     
 .resident_status {
@@ -23,6 +47,28 @@
     background-color: white;
     padding: 0.5em 1em;
     border-radius: 0 8px 8px 0;
+}
+
+.resident_status.alive {
+    background: #28a745;
+    color: white;
+}
+
+.resident_status.dead {
+    background: #dc3545;
+    color: white;
+}
+
+.resident_status.unknown {
+    background-color: #374151;
+    color: white;
+    animation: subtleBlink 1.5s infinite ease-in-out;
+}
+
+@keyframes subtleBlink {
+    0% { opacity: 1; }
+    50% { opacity: 0.85; }
+    100% { opacity: 1; }
 }
 
 .resident_body {
