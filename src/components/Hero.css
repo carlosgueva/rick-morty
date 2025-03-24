@@ -1,0 +1,13 @@
+.hero {
+    background-image: url("https://i.pinimg.com/originals/6e/39/6a/6e396ac75293f741be7b7855ba4968e5.gif");
+    background-size: cover;
+    background-position: top;
+    width: 100%;
+    height: 35dvh;
+}
+
+@media (min-width: 768px) {
+    .hero {
+        height: 50dvh;
+    }
+}
